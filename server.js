@@ -5,6 +5,9 @@ const connectDB = require("./config/db");
 //Connect database
 connectDB();
 
+// Init Middleware - This is so that we can use body in our request
+app.use(express.json({ extended: false }));
+
 //This is used to check if we cna make API requests
 app.get("/", (req, res) => res.send("API Running"));
 

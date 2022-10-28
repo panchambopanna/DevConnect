@@ -1,3 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://panchambopanna:xyz1127%40M@devconnector.q0ssrfu.mongodb.net/?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://panchambopanna:panchambopanna@devconnector.q0ssrfu.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret": "mySecretWebToken",
+    "githubClientId": "f5151b080aee82cb74a9",
+    "githubSecret": "0ae779c09e54fab79d106fe52523c529a9c9b415"
 }
