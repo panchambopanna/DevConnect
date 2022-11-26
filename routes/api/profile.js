@@ -8,6 +8,7 @@ const { check, validationResult } = require("express-validator");
 
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
+const Post = require("../../models/Post");
 const { onErrorResumeNext, isEmpty } = require("rxjs");
 const { profile } = require("console");
 
@@ -32,7 +33,7 @@ router.get("/me", auth, async (req, res) => {
 });
 
 // @route   POST api/profile
-// @desc    Craete or update a user profile
+// @desc    Create or update a user profile
 // @access  Private
 router.post(
   "/",
@@ -149,7 +150,8 @@ router.get("/user/:user_id", async (req, res) => {
 // @access  Private
 router.delete("/", auth, async (req, res) => {
   try {
-    // TODO: Remove users posts
+    // Remove users posts
+    await Post.deleteMany({ user: req.user.id });
     // Remove profile
     await Profile.findOneAndRemove({ user: req.user.id });
     // Remove user
