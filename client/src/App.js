@@ -7,6 +7,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Alert from "./components/layout/Alert";
 import Dashboard from "./components/dashboard/Dashboard";
+import Profiles from "./components/profiles/Profiles";
 import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
@@ -39,6 +40,7 @@ function App() {
             <Routes>
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/login" element={<Login />} />
+              <Route exact path="/profile" element={<Profiles />} />
               <Route element={<PrivateRoute />}>
                 <Route exact path="/dashboard" element={<Dashboard />} />
                 <Route
