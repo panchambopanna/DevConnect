@@ -100,6 +100,7 @@ router.delete("/:id", auth, async (req, res) => {
 // @desc    Like a posts
 // @access  Private
 router.put("/like/:id", auth, async (req, res) => {
+  console.log("liked");
   try {
     const post = await Post.findById(req.params.id);
 

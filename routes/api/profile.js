@@ -9,8 +9,6 @@ const { check, validationResult } = require("express-validator");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
-const { onErrorResumeNext, isEmpty } = require("rxjs");
-const { profile } = require("console");
 
 // @route   GET api/profile/me
 // @desc    Get current users profile

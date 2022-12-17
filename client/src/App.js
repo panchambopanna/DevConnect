@@ -17,6 +17,8 @@ import CreateProfile from "./components/profile-form/CreateProfile";
 import EditProfile from "./components/profile-form/EditProfile";
 import AddExperience from "./components/profile-form/AddExperience";
 import AddEducation from "./components/profile-form/AddEducation";
+import Profile from "./components/profile/Profile";
+import Posts from "./components/posts/Posts";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -41,6 +43,7 @@ function App() {
               <Route exact path="/register" element={<Register />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/profile" element={<Profiles />} />
+              <Route exact path="/profile/:id" element={<Profile />} />
               <Route element={<PrivateRoute />}>
                 <Route exact path="/dashboard" element={<Dashboard />} />
                 <Route
@@ -55,6 +58,7 @@ function App() {
                   element={<AddExperience />}
                 />
                 <Route exact path="/add-education" element={<AddEducation />} />
+                <Route exact path="/posts" element={<Posts />} />
               </Route>
             </Routes>
           </section>
