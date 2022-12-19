@@ -20,6 +20,8 @@ import AddEducation from "./components/profile-form/AddEducation";
 import Profile from "./components/profile/Profile";
 import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
+import PageNotFound from "./components/layout/PageNotFound";
+import AllRoute from "./components/routing/AllRoute";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -37,33 +39,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route exact path="/" element={<Landing />} />
+            <Route path="*" element={<AllRoute />} />
           </Routes>
-          <section className="container">
-            <Alert />
-            <Routes>
-              <Route exact path="/register" element={<Register />} />
-              <Route exact path="/login" element={<Login />} />
-              <Route exact path="/profile" element={<Profiles />} />
-              <Route exact path="/profile/:id" element={<Profile />} />
-              <Route element={<PrivateRoute />}>
-                <Route exact path="/dashboard" element={<Dashboard />} />
-                <Route
-                  exact
-                  path="/create-profile"
-                  element={<CreateProfile />}
-                />
-                <Route exact path="/edit-profile" element={<EditProfile />} />
-                <Route
-                  exact
-                  path="/add-experience"
-                  element={<AddExperience />}
-                />
-                <Route exact path="/add-education" element={<AddEducation />} />
-                <Route exact path="/posts" element={<Posts />} />
-                <Route exact path="/posts/:id" element={<Post />} />
-              </Route>
-            </Routes>
-          </section>
         </div>
       </BrowserRouter>
     </Provider>
